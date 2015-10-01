@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html zh-ch>
+<head>
+<meta charset="utf-8"/>
+<meta name="Decription" content=""/>
+<title>8.10芒果tv视频点播器</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+	*{margin: 0px;color:white;font-family: "Microsoft Yahei";padding:0px;}
+	.web{width:100%;height: 503px;border: 0px solid blue;position: relative;}
+	.content{width: 100%;height: 503px;background-color: black;overflow: hidden;}
+	.content ul li{list-style-type: none;border: 0px solid red;width:100%;height:503px;}
+	.content ul li a{display: block;width:100%;height: 503px;background: url("images/0810/play.png") no-repeat center;display: none;}
+	.menu{width: 797px;height: 55px;border: 0px solid red;position: absolute;left: 50%;bottom: 25px;margin-left: -398px;}
+	.menu ul li{list-style-type: none;width: 90px;height: 51px;float: left;margin-left:5px;border:1px solid white;cursor: pointer; }
+	.menu ul .bor{border-color: #FF5511 ;}
+</style>
+<!-- overflow:hidden
+margin-left:-396px-->
+</head>
+<body>
+	<div class="web">
+		<div class="content">
+			<ul>
+    			<li style="background: url(images/0810/1.jpg) center;">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/2.jpg) center">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/3.jpg) center">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/4.jpg) center">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/5.jpg) center">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/6.jpg) center">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/7.jpg) center">
+    				<a href="www.bdspace.top"></a>
+    			</li>
+    			<li style="background: url(images/0810/8.jpg) center">
+    				<a hrefwww.bdspace.topa>
+    			</li>
+
+			</ul>
+		</div>
+		<div class="menu">
+			<ul>
+    			<li class="bor">
+    				<img src="images/0810/nav1.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav2.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav3.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav4.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav5.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav6.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav7.jpg"/>
+    			</li>
+    			<li>
+    				<img src="images/0810/nav8.jpg"/>
+    			</li>
+
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var i = 0;
+		var time=0;
+		$(".content").hover(function(){
+			$(".content ul li a").css("display","block")
+		},function(){
+				$(".content ul li a").css("display","none")
+		})
+		$(".menu ul li").hover(function(){
+			$(this).addClass("bor").siblings().removeClass("bor");
+			i=$(this).index();
+			$(".content ul li").eq(i).fadeIn(300).siblings().fadeOut(300);
+		})
+		function auto(){
+			i++;
+			if(i>7)
+			i=0;
+			$(".menu ul li").eq(i).addClass("bor").siblings().removeClass("bor");
+			$(".content ul li").eq(i).fadeIn(300).siblings().fadeOut(300);
+		}
+		time=setInterval("auto()",3000);
+		$(".content ul li a").hover(function(){
+			clearInterval(time);
+		},function(){
+         time=setInterval("auto()",3000);
+		})
+
+
+	</script>
+</body>
+</html>

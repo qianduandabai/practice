@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html zh-ch>
+<head>
+<meta charset="utf-8"/>
+<title>8.9抽屉式图片展</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<style type="text/css">
+	body{background: url("images/bg.jpg")top center;}
+	*{margin: 0px;color:white;font-family: "Microsoft Yahei";}
+	#show{width: 1092px;height: 430px;border: 0px solid ;margin:90px auto;}
+	.pic{width: 100px;height: 430px;float: left;}
+	.txt{width: 76px;height: 406px;padding:24px 0 0 24px;background: rgba(0,0,0,.5)}
+	.p1{font-size: 12px;width: 12px;float: left;}
+	.p2{font-size: 14px;width: 14px;margin-left: 15px;float: left;}
+</style>
+</head>
+<body>
+	<div id="show">
+		<div class="pic" style="background:url('images/1.jpg')">
+			<div class="txt">
+				<p class="p1">标题：<br>风景</p>
+				<p class="p2">不一样的经历||看到不一样的风景</p>
+			</div>
+		</div>
+		<div class="pic" style="background:url('images/2.jpg')">
+			<div class="txt">
+				<p class="p1">标题：<br>风景</p>
+				<p class="p2">不一样的经历||看到不一样的风景</p>
+			</div>
+		</div>
+		<div class="pic" style="background:url('images/3.jpg')">
+			<div class="txt">
+				<p class="p1">标题：<br>风景</p>
+				<p class="p2">不一样的经历||看到不一样的风景</p>
+			</div>
+		</div>
+		<div class="pic" style="background:url('images/4.jpg');width:789px">
+			<div class="txt">
+				<p class="p1">标题：<br>风景</p>
+				<p class="p2">不一样的经历||看到不一样的风景</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(".pic").hover(function(){
+		$(this).stop(true).animate({width:"789px"},600).siblings().stop(true).animate({width:"100px"},600);
+	});
+</script>
+</body>
+</html>
