@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html zh-ch>
+<head>
+<meta charset="utf-8"/>
+<meta name="Keywords"content=""/>
+<title>8.13途牛</title>
+<style type="text/css">
+	*{margin:0px;padding: 0px;}
+	body{background: url(images/0813/bg.jpg);}
+	.box{width: 735px;height: 350px;border:0px solid #fff;margin: 50px auto;position: relative;}
+	.pic{width: 735px;height: 350px;border:0px solid #99ffff;overflow: hidden;}
+	.pic ul li{list-style-type: none;width: 735px;height: 350px;}
+	.prev{width: 45px;height: 100px;position: absolute;left: 0px;top:50%;margin-top: -50px;background: url(images/0813/button.png);opacity: 0;cursor: pointer;}
+	.next{width: 45px;height: 100px;position: absolute;right: 0px;top:50%;margin-top: -50px;background: url(images/0813/button.png);background-position:-55px 0px;opacity: 0;cursor: pointer;}
+	.nav{width: 720px;height: 30px;position:absolute;left: 50%;bottom: 10px;margin-left:-360px;}
+	.nav ul li{list-style-type: none;width: 119px;height: 30px;float: left;background: #fff;background:rgba(255,255,255,0.6);margin-right: 1px;text-align: center;line-height: 30px;color: #333;cursor: pointer;}
+	.nav ul .bg{background: rgba(0,0,0,0.6);color: #fff;}
+</style>
+</head>
+<body>
+	<div class="box">
+		<div class="pic">
+			<ul>
+				<li><img src="images/0813/1.jpg"/></li>
+				<li><img src="images/0813/2.jpg"/></li>
+				<li><img src="images/0813/3.jpg"/></li>
+				<li><img src="images/0813/4.jpg"/></li>
+				<li><img src="images/0813/5.jpg"/></li>
+				<li><img src="images/0813/6.jpg"/></li>
+			</ul>
+		</div>
+		<div class="prev but">
+			
+		</div>
+		<div class="next but">
+			
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="bg">国庆满减狂欢</li>
+				<li>趣玩周边</li>
+				<li>高铁出游</li>
+				<li>途牛会员日</li>
+				<li>私奔R计划</li>
+				<li>新生特价机票</li>
+			</ul>
+		</div>
+
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		var i=0;
+		var time=0;
+		$(".nav ul li").hover(function(){
+			i=$(this).index();
+			$(".pic ul li").eq(i).fadeIn(100).siblings().fadeOut();
+			$(this).addClass("bg").siblings().removeClass();
+			clearInterval(time);
+		},function(){
+			time=setInterval("auto()",3000);
+		})
+		$(".next").click(function(){
+			i++;
+			if(i>5){
+				i=0;
+			}
+			$(".pic ul li").eq(i).fadeIn(100).siblings().fadeOut();
+			$(".nav ul li").eq(i).addClass("bg").siblings().removeClass();
+
+		})
+		$(".prev").click(function(){
+			i--;
+			if(i<0){
+				i=5;
+			}
+			$(".pic ul li").eq(i).fadeIn(100).siblings().fadeOut();
+			$(".nav ul li").eq(i).addClass("bg").siblings().removeClass();
+
+		})
+		$(".box").hover(function(){
+			$(".prev").css("opacity","0.5");
+			$(".next").css("opacity","0.5");
+		},function(){
+			$(".prev").css("opacity","0");
+			$(".next").css("opacity","0");
+		});
+		function auto(){
+			i++;
+			if(i>5){
+				i=0;
+			}
+			$(".pic ul li").eq(i).fadeIn(100).siblings().fadeOut();
+			$(".nav ul li").eq(i).addClass("bg").siblings().removeClass();
+		}
+		time=setInterval("auto()",3000);
+		$(".but").hover(function(){
+			clearInterval(time);
+		},function(){
+			time=setInterval("auto()",3000);
+		})
+
+
+
+	</script>
+</body>
+</html>

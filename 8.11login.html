@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html zh-ch>
+<head>
+<meta charset="utf-8"/>
+<title>8.11后台登录页面</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<style type="text/css">
+	/*body{background: url("images/bg.jpg")top center;}*/
+	*{margin: 0px;padding:0px;font-	family: "Microsoft Yahei";}
+	#top{width: 100%;height:70px;background:#30333c; }
+	#main{width: 100%;height: 700px;background:#ccff99;}
+	#mybg{width: 100%}
+	#login{width: 400px;height: 380px;background:#fff;position: fixed;top:200px;left: 35%;box-shadow: 0px 0px 10px #666;border-radius: 4px;}
+	.ti{height: 60px;line-height: 60px;text-indent:20px; font-size: 18px;}
+	.loginCon{width: 340px;height: 310px;margin: 0 auto;}
+	.loginCon p{margin-bottom: 20px;height: 47px;}
+	.txt{height: 45px;width: 338px;border-radius: 3px;border: 1px solid #ddd;font-family: "微软雅黑";text-indent:40px;}
+	.user{background: url(images/0811/user.png) no-repeat 10px center;}
+	.pwd{background: url(images/0811/pwd.png) no-repeat 10px center;}
+	.yzm{background: url(images/0811/yzm.png) no-repeat 10px center;width: 200px;float: left;}
+	.yzm2{float: right;}
+	.but{width: 340px;height: 45px;border: 0px;background: #000;color: #fff;border-radius: 3px;font-size: 18px;}
+	.beizhu {font-size: 14px;color: #666;}
+	.beizhu a{color: #666;float: right;text-decoration: none;}
+
+</style>
+</head>
+<body>
+	<div id="top">
+		<img src="images/0811/logo.jpg">
+	</div>
+	<div id="main">
+		<video src="video/2.mp4" autoplay loop id="mybg">  	
+		</video>
+	</div>
+	<!-- 登录界面 -->
+	<div id="login">
+		<p class="ti">登录</p>
+		<div class="loginCon">
+			<form>
+            	<p><input type="text" class="txt user" placeholder="请输入手机号或邮箱登录"/></p>
+            	<p><input type="password" class="txt pwd" placeholder="请输入密码"/></p>
+            	<p><input type="text" class="txt yzm" placeholder="验证码"/><img src="images/0811/yzm2.png" class="yzm2"></p>
+            	<p><input type="submit" class="but" value="登录"/></p>
+            	<!-- 考虑兼容性，将a放在前边，否则有可能错位 -->
+            	<p class="beizhu"><a href="www.bdspace.top">>>您忘记密码了吗</a><input type="checkbox" id="ck"/><label for="ck">请记住密码</label> </p>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

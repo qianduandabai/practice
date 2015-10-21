@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html zh-ch>
+<head>
+<meta charset="utf-8"/>
+<meta name="Keywords"content=""/>
+<title>8.12桌面级便签效果</title>
+<style type="text/css">
+	*{margin: 0px;padding:0px;font-	family: "Microsoft Yahei";}
+	body{background: url("images/0812/bj.jpg");}
+	#menu{width: 200px;background-color: #fff;line-height: 35px;box-shadow: 0px 0px 15px #fff;position: absolute;top:200px;left: 300px;display: none;}
+	#menu ul li{border-bottom:1px solid #ddd;list-style:none;color: #666;font-size: 14px;text-indent: 20px;}
+	#menu ul li img{margin-right: 20px;}
+	.hover{background-color: #009999;color: #fff;}
+
+</style>
+
+</head>
+<body>
+	<div id="menu">
+		<ul>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>添加应用</li>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>添加便签</li>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>清除便签</li>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>刷新</li>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>上传资料</li>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>更换背景</li>
+        	<li><img src="images/0812/1.png" align="absmiddle"/>注销</li>
+		</ul>	
+
+	</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		document.oncontextmenu=function(){return false}
+		$(document).mousedown(function(e){
+			var key=e.which;
+			// alert(key);
+			var x = e.clientX;
+			var y= e.clientY;
+			// alert(x+","+y);
+			if(key==3){
+				$("#menu").css({left:x,top:y}).show();
+			}
+			
+		});
+		// 当鼠标在浏览器任意位置点击时，菜单隐藏
+		$(document).click(function(){
+			$("#menu").hide();
+		});
+		// 当鼠标移动对应菜单栏上，改变背景颜色
+		$("#menu ul li").mouseover(function(){
+			$(this).addClass("hover").siblings().removeClass("hover");
+
+		})
+		// 当点击添加便签时，就可以在页面当中添加便签
+		// var desk_index=-1;
+		// $(".menu ul li").click(function(){
+		// 	var _index=$(this).index();
+		// 	if(localStorage.getItem("destindex")){
+		// 		desk_index-Math.floor(localStorage.getItem("deskindex"));//取出保存的序列号
+		// 	}
+		// 	var I=$(".menu").offset().left;
+		// 	var t=$(".menu").offset().top;
+		// 	$("#desk_list").append("<div class='desk' style='background:url(images/"+sjNum()+".png);top:"+t+"px")'")
+		// })
+
+	</script>
+</body>
+</html>
